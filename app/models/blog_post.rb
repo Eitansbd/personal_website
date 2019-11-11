@@ -5,6 +5,8 @@ class BlogPost < ApplicationRecord
   validates :subtitle, presence: true
   validates :aws_obj_key, presence: true
   
+  before_destroy :remove_files_from_aws
+  
   def save_content_to_aws
     s3 = Aws::S3::Resource.new
     bucket = s3.bucket(ENV.fetch("PERSONAL_WEBSITE_BUCKET_NAME"))
@@ -24,4 +26,14 @@ class BlogPost < ApplicationRecord
     
     self.content = object.get.body.string
   end
+  
+  private
+    def remove_files_from_aws
+      s3 = Aws::S3::Resource.new
+      bucket = s3.bucket(ENV.fetch("PERSONAL_WEBSITE_BUCKET_NAME"))
+    
+      object = bucket.object(self.aws_obj_key)
+      
+      object.delete
+    end
 end
