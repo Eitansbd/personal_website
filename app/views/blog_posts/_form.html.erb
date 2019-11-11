@@ -1,0 +1,19 @@
+<div class="container">
+    <%= form_for @blog_post do |f| %>
+        <div class="row">
+            <%= f.label :title  %>
+            <%= f.text_field :title %>
+    
+            <%= f.label :subtitle %>
+            <%= f.text_field :subtitle %>
+      
+        </div>
+        <div class="row">
+            <%= f.text_area :content, class: "blog-content-input" %>
+      
+        </div>
+        <div class="row">
+          <%= f.submit "Upload Post", class: "btn btn-primary"%>
+          <% end %>
+        </div>  
+</div>
