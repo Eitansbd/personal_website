@@ -1,0 +1,22 @@
+<div class="container">
+  <% @blog_posts.each_slice(3) do |set_of_posts| %>
+    <div class="row top-buffer">
+      <% set_of_posts.each do |blog_post| %>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-img-container">
+              <img class="card-img-top" src="/images/blog/ %>" alt="post image">
+            </div>
+            
+            <div class="card-body">
+              <h5 class="card-title"><%= blog_post.title %></h5>
+              <p class="card-text"><%= blog_post.subtitle %></p>
+              <p class="card-text">Posted on: <%= blog_post.created_at %><%= %></p>
+              <%= link_to "Read More", blog_post_path(blog_post), class: "btn btn-lg btn-primary" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
