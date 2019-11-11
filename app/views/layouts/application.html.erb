@@ -13,14 +13,13 @@
   	<nav class="row navbar navbar-inverse">
   	  <div class="container-fluid">
   		    <div class="navbar-header">
-  		      <a class="navbar-brand" href="#">Eitan Bar-David</a>
+  		      <%= link_to "Eitan Bar-David", root_url, class: "navbar-brand" %>
   		    </div>
   		    <ul class="nav navbar-nav navbar-right">
-  		      <li><a href="/home">Home</a></li>
-  		      <li><a href="/projects">Projects</a></li>
+  		      <li><%= link_to "Projects", projects_path %></li>
   		      <li><a href="/blog">Blog</a></li>
   		      <li><a href="/files/resume.pdf"target="_blank">Resume</a></li>
-  		      <li><a href="mailto: eitansbd@gmail.com">Contact Me!</a></li>
+  		      <li><%= mail_to "eitansbd@gmail.com", "Contact Me!", subject: "Connect" %></li>
   		    </ul>
   
   	  </div>
