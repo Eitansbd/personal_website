@@ -1,0 +1,12 @@
+<%= form_for @blog_post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  
+  <%= f.label :subtitle %>
+  <%= f.text_field :subtitle %>
+  
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  
+  <%= f.submit "Upload Post", class: "btn btn-primary"%>
+<% end %>
