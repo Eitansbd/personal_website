@@ -24,6 +24,12 @@ class BlogPostsController < ApplicationController
     @blog_post.fetch_content_from_aws
   end
   
+  def edit
+    @blog_post = BlogPost.find(params[:id])
+    
+    @blog_post.fetch_content_from_aws
+  end
+  
   private
     
     def blog_post_params
