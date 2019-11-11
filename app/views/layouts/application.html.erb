@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PersonalWebsite</title>
+    <title>Eitan Bar-David</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,36 @@
   </head>
 
   <body>
-    <%= yield %>
+  	<nav class="row navbar navbar-inverse">
+  	  <div class="container-fluid">
+  		    <div class="navbar-header">
+  		      <a class="navbar-brand" href="#">Eitan Bar-David</a>
+  		    </div>
+  		    <ul class="nav navbar-nav navbar-right">
+  		      <li><a href="/home">Home</a></li>
+  		      <li><a href="/projects">Projects</a></li>
+  		      <li><a href="/blog">Blog</a></li>
+  		      <li><a href="/files/resume.pdf"target="_blank">Resume</a></li>
+  		      <li><a href="mailto: eitansbd@gmail.com">Contact Me!</a></li>
+  		    </ul>
+  
+  	  </div>
+  	</nav>
+  	<%= yield %>
+  	
+  	<div class="navbar navbar-default navbar-bottom">
+  	  <div class="container">
+  	  	 <div class="container-fluid text-md-left">
+  			    <div class="row bottom-nav-buffer">
+  		        <div class="col-sm-1 col-md-offset-4 vcenter">
+  		            <a href="https://github.com/eitansbd" target="_blank"><image src="/images/GitHub-Mark-64px.png" alt="github"></image></a>
+  		        </div>
+  		        <div class="col-sm-1 col-md-offset-1 vcenter">
+  		            <a href="https://linkedin.com/in/eitanbardavid" target="_blank"><image id="linkedin-logo" src="/images/LI-In-Bug.png" alt="linkedin"></image></a>
+  		        </div>
+  		    	</div>
+  			  </div>
+  	  </div>
+  	</div>
   </body>
 </html>
