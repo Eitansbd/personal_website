@@ -1,8 +1,6 @@
 class BlogPostsController < ApplicationController
   def index
     @blog_posts = BlogPost.all
-    
-    
   end
   
   def new
@@ -28,6 +26,12 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.find(params[:id])
     
     @blog_post.fetch_content_from_aws
+  end
+  
+  def destroy
+    @blog_post = BlogPost.find(params[:id])
+    
+    @blog_post.destroy
   end
   
   private
