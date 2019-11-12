@@ -19,4 +19,8 @@ module BlogPostsHelper
     #markdown = Redcarpet::Markdown.new(CustomRender, extras)
     markdown.render(text).html_safe
   end
+  
+  def admin_logged_in?
+    session[:admin] == 1
+  end
 end
