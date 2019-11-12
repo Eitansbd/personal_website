@@ -18,7 +18,7 @@
   		    <ul class="nav navbar-nav navbar-right">
   		      <li><%= link_to "Projects", projects_path %></li>
   		      <li><%= link_to "Blog", blog_posts_path %></li>
-  		      <li><a href="/files/resume.pdf"target="_blank">Resume</a></li>
+  		      <li><a href="/assets/eitan-bar-david-resume.pdf"target="_blank">Resume</a></li>
   		      <li><%= mail_to "eitansbd@gmail.com", "Contact Me!", subject: "Connect" %></li>
   		      <% if admin_logged_in? %>
   		      <li><%= link_to "Logout", admin_logout_url, method: :delete %></li>
