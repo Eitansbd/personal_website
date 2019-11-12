@@ -1,9 +1,16 @@
 <div class="container">
     <div class="row top-buffer blog-background">
+        <% if admin_logged_in? %>
+            <%= link_to "Edit", edit_blog_post_url(@blog_post), class: "btn btn-primary" %>
+            <%= link_to "Delete", blog_post_url(@blog_post), method: :delete, class: "btn btn-primary", data: { confirm: "Delete Cannot Be Undone. Are you sure?" } %>
+        <% end %>
+        
         <div class="col-md-8 col-md-offset-2">
             <div class="page-header">
-                <h1><%= @blog_post.title%> </h1>
+                <h1><%= @blog_post.title%></h1>
+                <p><%= @blog_post.subtitle %></p>
             </div>
+            
             <%= render_markdown(@blog_post.content) %>
         </div>
     </div>
