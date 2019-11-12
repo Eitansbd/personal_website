@@ -84,6 +84,8 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   config.assets.precompile += %w(images/* videos/* files/* stylesheets/* javascripts/*)
+  
+  config.assets.paths << Rails.root.join("app/assets/videos")
 
   
   if ENV["RAILS_LOG_TO_STDOUT"].present?
