@@ -1,4 +1,6 @@
 class BlogPostsController < ApplicationController
+  before_action :load_blog_post, only: [:show, :edit, :destroy]
+  
   def index
     @blog_posts = BlogPost.all
   end
@@ -17,20 +19,14 @@ class BlogPostsController < ApplicationController
   end
   
   def show
-    @blog_post = BlogPost.find(params[:id])
-    
     @blog_post.fetch_content_from_aws
   end
   
   def edit
-    @blog_post = BlogPost.find(params[:id])
-    
     @blog_post.fetch_content_from_aws
   end
   
   def destroy
-    @blog_post = BlogPost.find(params[:id])
-    
     @blog_post.destroy
   end
   
@@ -38,5 +34,9 @@ class BlogPostsController < ApplicationController
     
     def blog_post_params
       params.require(:blog_post).permit(:title, :subtitle, :content)
+    end
+    
+    def load_blog_post
+      @blog_post = BlogPost.find(params[:id])
     end
 end
