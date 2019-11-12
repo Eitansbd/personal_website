@@ -18,7 +18,7 @@
   		    <ul class="nav navbar-nav navbar-right">
   		      <li><%= link_to "Projects", projects_path %></li>
   		      <li><%= link_to "Blog", blog_posts_path %></li>
-  		      <li><a href="/assets/eitan-bar-david-resume.pdf"target="_blank">Resume</a></li>
+  		      <li><%= link_to "Resume", asset_path('eitan-bar-david-resume.pdf'), target: '_blank' %></li>
   		      <li><%= mail_to "eitansbd@gmail.com", "Contact Me!", subject: "Connect" %></li>
   		      <% if admin_logged_in? %>
   		      <li><%= link_to "Logout", admin_logout_url, method: :delete %></li>
@@ -34,10 +34,10 @@
   	  	 <div class="container-fluid text-md-left">
   			    <div class="row bottom-nav-buffer">
   		        <div class="col-sm-1 col-md-offset-4 vcenter">
-  		            <a href="https://github.com/eitansbd" target="_blank"><image src="/assets/GitHub-Mark-64px.png" alt="github"></image></a>
+  		            <a href="https://github.com/eitansbd" target="_blank"><%= image_tag 'GitHub-Mark-64px.png', alt: "github" %></a>
   		        </div>
   		        <div class="col-sm-1 col-md-offset-1 vcenter">
-  		            <a href="https://linkedin.com/in/eitanbardavid" target="_blank"><image id="linkedin-logo" src="/assets/LI-In-Bug.png" alt="linkedin"></image></a>
+  		            <a href="https://linkedin.com/in/eitanbardavid" target="_blank"><%= image_tag '/assets/LI-In-Bug.png', id: "linkedin-logo", alt: "linkedin" %></a>
   		        </div>
   		    	</div>
   			  </div>
