@@ -1,5 +1,6 @@
 class BlogPostsController < ApplicationController
   before_action :load_blog_post, only: [:show, :edit, :destroy]
+  before_action :require_admin_login, only: [:new, :create, :edit, :destroy]
   
   def index
     @blog_posts = BlogPost.all
@@ -38,5 +39,9 @@ class BlogPostsController < ApplicationController
     
     def load_blog_post
       @blog_post = BlogPost.find(params[:id])
+    end
+    
+    def require_admin_login
+      redirect_to root_url unless session[:admin] == 1
     end
 end
