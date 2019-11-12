@@ -8,32 +8,29 @@ class BlogPost < ApplicationRecord
   before_destroy :remove_files_from_aws
   
   def save_content_to_aws
-    s3 = Aws::S3::Resource.new
-    bucket = s3.bucket(ENV.fetch("PERSONAL_WEBSITE_BUCKET_NAME"))
-    
     self.aws_obj_key = 'blog/' + self.title.gsub(" ", "-").downcase + '.md'
     
-    object = bucket.object(self.aws_obj_key)
+    object = fetch_s3_object
     
     object.put(body: self.content)
   end
   
   def fetch_content_from_aws
-    s3 = Aws::S3::Resource.new
-    bucket = s3.bucket(ENV.fetch("PERSONAL_WEBSITE_BUCKET_NAME"))
-    
-    object = bucket.object(self.aws_obj_key)
+    object =  fetch_s3_object
     
     self.content = object.get.body.string
   end
   
   private
     def remove_files_from_aws
-      s3 = Aws::S3::Resource.new
-      bucket = s3.bucket(ENV.fetch("PERSONAL_WEBSITE_BUCKET_NAME"))
-    
-      object = bucket.object(self.aws_obj_key)
+      object = fetch_s3_object
       
       object.delete
+    end
+    
+    def fetch_s3_object
+      s3 = Aws::S3::Resource.new
+      bucket = s3.bucket(ENV.fetch("PERSONAL_WEBSITE_BUCKET_NAME"))
+      bucket.object(self.aws_obj_key)
     end
 end
