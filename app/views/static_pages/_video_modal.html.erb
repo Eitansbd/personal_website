@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%= modal_name %>Modal">**Demo video**</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%= modal_name %>Modal">Demo Video</button>
                         
 <div class="modal fade" id="<%= modal_name %>Modal" tabindex="-1" role="dialog" aria-labelledby="<%= modal_name %>ModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -11,7 +11,7 @@
             <div class="modal-body">
                 <div align="center" class="embed-responsive embed-responsive-16by9">
                     <video autoplay loop class="embed-responsive-item">
-                        <source src="/videos/scheduler-demo.mp4" type="video/mp4">
+                        <source src="<%= video_link %>" type="video/mp4">
                     </video>
                 </div>
             </div>
