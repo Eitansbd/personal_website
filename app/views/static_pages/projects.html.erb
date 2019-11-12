@@ -1,24 +1,32 @@
 <div class="container">
     <div class="row">
         <div class="jumbotron">
-            <h2>Camp Schedule Management System
+            <h2>Personal Website
                 <div class="btn-group pull-right">
-                    <a href="https://github.com/Eitansbd/camp_scheduling_app" target="_blank" class="btn btn-primary">Source Code</a>
+                    <%= link_to "Source Code", "https://github.com/Eitansbd/camp_scheduling_app", target: "_blank", class: "btn btn-primary" %>
                     <%= render 'video_modal', modal_name: "Schedular", video_link: "/assets/scheduler-demo.mp4" %>
-                    <a href="https://camp-schedule-management.herokuapp.com/" target="_blank" class="btn btn-primary">Project Website</a>
                 </div>
             </h2>
             <div class="row top-buffer-sm">
-                
                 <div class="col-md-4">
-                    <p>As a longtime division head at childrens summer camps I knew that there was one job that nobody wanted: schedule. The jobs requires hours of work every day to try and make everyone happy - give the kids the activities they want without overworking the staff members and making sure that throughout the summer everyone gets a change to do everything.</p>
+                    <h4>Background</h4>
+                    <p>Looking for a job as a Software Engineer? It's probably a good idea to have a personal website because many jobs will ask for one. But don't use a template or wordpress - build one yourself!</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Best Feature</h4>
+                    <p>As the admin, I'm able to sign in and write, post, and edit my blog using markdown syntax. When the post is saved, the title, subtitle, and timestamps are saved to my heroku database along with the S3 object key. When the post is loaded, the S3 object is fetched from the bucket using the object key and the markdown text is rendered using RedCarpet.</p>
+                    <p></p>
                 </div>
                 <div class="col-md-4">
                     <h4>Technical Details</h4>
-                    <ul>
-                        <li>Backend: Ruby + Sinatra</li>
-                        <li>PostgreSQL w/ PG gem</li>
-                    </ul>
+                    <dl class="row">
+                        <dt class="col-md-4">Backend</dt>
+                        <dd class="col-md-8">Ruby, Rails, ActiveRecord, AWS S3 </dd>
+                        <dt class="col-md-4 text-truncate">Front End</dt>
+                        <dd class="col-md-8">ERB, Bootstrap, JS</dd>
+                        <dt class="col-md-4">Challenges</dt>
+                        <dd class="col-md-8">Configuring project and using S3 bucket</dd>
+                    </dl>
                 </div>
             </div>
         </div> 
@@ -28,22 +36,31 @@
         <div class="jumbotron">
             <h2>Camp Schedule Management System
                 <div class="btn-group pull-right">
-                    <a href="https://github.com/Eitansbd/camp_scheduling_app" target="_blank" class="btn btn-primary">Source Code</a>
+                    <%= link_to "Source Code", "https://github.com/Eitansbd/camp_scheduling_app", target: "_blank", class: "btn btn-primary" %>
                     <%= render 'video_modal', modal_name: "Schedular", video_link: "/assets/scheduler-demo.mp4" %>
-                    <a href="https://camp-schedule-management.herokuapp.com/" target="_blank" class="btn btn-primary">Project Website</a>
+                    <%= link_to "Project Website", "https://camp-schedule-management.herokuapp.com/", target: "_blank", class: "btn btn-primary" %>
                 </div>
             </h2>
             <div class="row top-buffer-sm">
-                
                 <div class="col-md-4">
-                    <p>As a longtime division head at childrens summer camps I knew that there was one job that nobody wanted: schedule. The jobs requires hours of work every day to try and make everyone happy - give the kids the activities they want without overworking the staff members and making sure that throughout the summer everyone gets a change to do everything.</p>
+                    <h4>Background</h4>
+                    <p class="project-description">The worst job at any summer camp is the scheduler. The app is designed to generate a daily schedule for each bunk in the camp making sure that bunks don't have an activity twice, activities aren't overbooked, double periods are scheduled properly, and a bunch of other requirments. The app is designed to work with the scheduler to make the perfect schedule for each day.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Best Feature</h4>
+                    <p>When the user enters a new activity into the system they indicate if the activity should by default be scheduled by the application (for example special activites and trips shouldn't be scheduled by default). Then on the scheduling page they are given a list of all the activities with checkboxes if they are scheduled by default that can be termporarily overriden</p>
+                    <p></p>
                 </div>
                 <div class="col-md-4">
                     <h4>Technical Details</h4>
-                    <ul>
-                        <li>Backend: Ruby + Sinatra</li>
-                        <li>PostgreSQL w/ PG gem</li>
-                    </ul>
+                    <dl class="row">
+                        <dt class="col-md-4">Backend</dt>
+                        <dd class="col-md-8">Ruby, Sinatra, PostgreSQL with custom queries</dd>
+                        <dt class="col-md-4 text-truncate">Front End</dt>
+                        <dd class="col-md-8">ERB templating and HTML/CSS</dd>
+                        <dt class="col-md-4">Challenges</dt>
+                        <dd class="col-md-8">The tree of elements encoded in the source document.</dd>
+                    </dl>
                 </div>
             </div>
         </div> 
@@ -51,54 +68,68 @@
     
     <div class="row">
         <div class="jumbotron">
-            <h2>Camp Schedule Management System
+            <h2>Todo App
                 <div class="btn-group pull-right">
-                    <a href="https://github.com/Eitansbd/camp_scheduling_app" target="_blank" class="btn btn-primary">Source Code</a>
+                    <%= link_to "Source Code", "https://github.com/Eitansbd/camp_scheduling_app", target: "_blank", class: "btn btn-primary" %>
                     <%= render 'video_modal', modal_name: "Schedular", video_link: "/assets/scheduler-demo.mp4" %>
-                    <a href="https://camp-schedule-management.herokuapp.com/" target="_blank" class="btn btn-primary">Project Website</a>
+                    <%= link_to "Project Website", "https://camp-schedule-management.herokuapp.com/", target: "_blank", class: "btn btn-primary" %>
                 </div>
             </h2>
             <div class="row top-buffer-sm">
-                
                 <div class="col-md-4">
-                    <p>As a longtime division head at childrens summer camps I knew that there was one job that nobody wanted: schedule. The jobs requires hours of work every day to try and make everyone happy - give the kids the activities they want without overworking the staff members and making sure that throughout the summer everyone gets a change to do everything.</p>
+                    <h4>Background</h4>
+                    <p>For a project at Launch School we had to build a Todo application with sinatra. I decided to convert the app to rails - see the steps I took in this set of <%= link_to "blog posts", "link"%>.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Best Feature</h4>
+                    <p>Todo apps are fairly common - this one adds some extra features like marking all todos in a list as complete with one button and style changes when items and lists are complete to spice things up a bit.</p>
+                    <p></p>
                 </div>
                 <div class="col-md-4">
                     <h4>Technical Details</h4>
-                    <ul>
-                        <li>Backend: Ruby + Sinatra</li>
-                        <li>PostgreSQL w/ PG gem</li>
-                    </ul>
+                    <dl class="row">
+                        <dt class="col-md-4">Backend</dt>
+                        <dd class="col-md-8">Ruby, Rails, ActiveRecord, AWS S3 </dd>
+                        <dt class="col-md-4 text-truncate">Front End</dt>
+                        <dd class="col-md-8">ERB, Bootstrap, JS</dd>
+                        <dt class="col-md-4">Challenges</dt>
+                        <dd class="col-md-8">Configuring project and using S3 bucket</dd>
+                    </dl>
                 </div>
             </div>
         </div> 
     </div>
     
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-           <div class="hero-unit align-center">
-               
-                <h1>Pediatric Knee Exoskeleton</h1>
-                <div class="row">
-                    <div class="col-md-3 btn-group btn-group-vertical">
-                        <a href="https://github.com/Eitansbd/camp_scheduling_app" target="_blank" class="btn btn-primary">Source Code</a>
-                        <%= render 'video_modal', modal_name: "Schedular", video_link: "/assets/scheduler-demo.mp4" %>
-                        <a href="https://github.com/Eitansbd/camp_scheduling_app" target="_blank" class="btn btn-primary">Project Website</a>
-    
-                    </div>
-                    <div class="col-md-6">
-                        <p>This project was built with Arduino hardware and software, blah blah blah and blah blah blah</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h4>Technical Details</h4>
-                        <ul>
-                            <li>Backend: Ruby + Sinatra</li>
-                            <li>PostgreSQL w/ PG gem</li>
-                        </ul>
-                    </div>
+      <div class="row">
+        <div class="jumbotron">
+            <h2>Pediatric Knee Exoskeleton
+                <div class="btn-group pull-right">
+                    <%= link_to "Source Code", "https://github.com/Eitansbd/camp_scheduling_app", target: "_blank", class: "btn btn-primary" %>
+                    <%= render 'video_modal', modal_name: "Schedular", video_link: "/assets/scheduler-demo.mp4" %>
                 </div>
-                
-            </div> 
-        </div>
+            </h2>
+            <div class="row top-buffer-sm">
+                <div class="col-md-4">
+                    <h4>Background</h4>
+                    <p>Looking for a job as a Software Engineer? It's probably a good idea to have a personal website because many jobs will ask for one. But don't use a template or wordpress - build one yourself!</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Best Feature</h4>
+                    <p>As the admin, I'm able to sign in and write, post, and edit my blog using markdown syntax. When the post is saved, the title, subtitle, and timestamps are saved to my heroku database along with the S3 object key. When the post is loaded, the S3 object is fetched from the bucket using the object key and the markdown text is rendered using RedCarpet</p>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Technical Details</h4>
+                    <dl class="row">
+                        <dt class="col-md-4">Backend</dt>
+                        <dd class="col-md-8">Ruby, Rails, ActiveRecord, AWS S3 </dd>
+                        <dt class="col-md-4 text-truncate">Front End</dt>
+                        <dd class="col-md-8">ERB, Bootstrap, JS</dd>
+                        <dt class="col-md-4">Challenges</dt>
+                        <dd class="col-md-8">Configuring project and using S3 bucket</dd>
+                    </dl>
+                </div>
+            </div>
+        </div> 
     </div>
 </div>
