@@ -20,6 +20,9 @@
   		      <li><%= link_to "Blog", blog_posts_path %></li>
   		      <li><a href="/files/resume.pdf"target="_blank">Resume</a></li>
   		      <li><%= mail_to "eitansbd@gmail.com", "Contact Me!", subject: "Connect" %></li>
+  		      <% if admin_logged_in? %>
+  		      <li><%= link_to "Logout", admin_logout_url, method: :delete %></li>
+  		      <% end %>
   		    </ul>
   
   	  </div>
