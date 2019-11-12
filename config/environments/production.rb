@@ -83,7 +83,7 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  assets.precompile += %w(images/* videos/* files/* stylesheets/* javascripts/*)
+  config.assets.precompile += %w(images/* videos/* files/* stylesheets/* javascripts/*)
 
   
   if ENV["RAILS_LOG_TO_STDOUT"].present?
