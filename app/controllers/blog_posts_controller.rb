@@ -14,10 +14,11 @@ class BlogPostsController < ApplicationController
   def create
     @blog_post = BlogPost.new(blog_post_params)
     @blog_post.save_content_to_aws
+    flash[:success] = "Post was uploaded successfully and is #{@blog_post.published? ? nil : "not"} published"
     
     @blog_post.save
     
-    redirect_to root_url
+    redirect_to blog_posts_url_where_visible
   end
   
   def show
@@ -33,7 +34,7 @@ class BlogPostsController < ApplicationController
       @blog_post.save_content_to_aws
       flash[:success] = "Post updated successfully"
       
-      redirect_to @blog_post.published? ? blog_posts_url : blog_posts_unpublished_url
+      redirect_to blog_posts_url_where_visible
     else
       flash[:error] = @blog_post.errors.full_messages.first
       render 'edit'
@@ -55,7 +56,8 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.find(params[:blog_post_id])
     @blog_post.toggle!(:published)
     
-    redirect_to @blog_post.published? ? blog_posts_url : blog_posts_unpublished_url
+    flash[:success] = "Post was #{@blog_post.published? ? nil : "un"}published"
+    redirect_to blog_posts_url_where_visible
   end
   
   private
@@ -70,5 +72,9 @@ class BlogPostsController < ApplicationController
     
     def require_admin_login
       redirect_to root_url unless session[:admin] == 1
+    end
+    
+    def blog_posts_url_where_visible
+      @blog_post.published? ? blog_posts_url : blog_posts_unpublished_url
     end
 end
