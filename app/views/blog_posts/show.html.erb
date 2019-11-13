@@ -1,18 +1,27 @@
 <div class="container">
-    <div class="row top-buffer blog-background">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="page-header">
-                <% if admin_logged_in? %>
-                    <div class='btn-group'>
-                            <%= link_to "Edit", edit_blog_post_url(@blog_post), class: "btn btn-primary pull-left" %>
+    <% if admin_logged_in? %>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-1">
+                <div class='btn-group'>
+                            <%= link_to "Edit", edit_blog_post_url(@blog_post), class: "btn btn-primary" %>
                             <%= link_to "Delete", blog_post_url(@blog_post), method: :delete, class: "btn btn-primary", data: { confirm: "Delete Cannot Be Undone. Are you sure?" } %>
-                    </div>
-                <% end %>
+                </div>
+            </div>
+        </div>    
+                    
+    <% end %>
+    <div class="row top-buffer blog-background">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="page-header">
+                <%= image_tag @blog_post.title_image.url(:medium), class: "thumbnail pull-left blog-img-title" %>
                 <h1><%= @blog_post.title%></h1>
                 <p><%= @blog_post.subtitle %></p>
             </div>
-            
+        </div>
+    </div>  
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
             <%= render_markdown(@blog_post.content) %>
         </div>
-    </div>
+    </div>      
 </div>
