@@ -11,6 +11,7 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'aws-sdk-s3', '~> 1'
+gem 'paperclip'
 gem 'redcarpet'
 gem 'rouge'
 # See https://github.com/rails/execjs#readme for more supported runtimes
