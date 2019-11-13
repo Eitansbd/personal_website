@@ -25,6 +25,10 @@ module BlogPostsHelper
     date.strftime("%b %-d, %Y")
   end
   
+  def opposite_of_published(blog_post) 
+    blog_post.published? ? "Unpublish" : "Publish"
+  end
+  
   private
     class CustomRender < Redcarpet::Render::HTML
       include Rouge::Plugins::Redcarpet
