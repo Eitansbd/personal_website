@@ -1,9 +1,16 @@
 class BlogPost < ApplicationRecord
   attr_accessor :content
   
+  has_attached_file :title_image, styles: {
+    square: '200x200#',
+    medium: '250x140'
+  }
+  
   validates :title, presence: true
   validates :subtitle, presence: true
   validates :aws_obj_key, presence: true
+  validates_attachment_content_type :title_image, :content_type => /\Aimage\/.*\Z/
+  
   
   before_destroy :remove_files_from_aws
   

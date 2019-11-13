@@ -1,5 +1,5 @@
 class BlogPostsController < ApplicationController
-  before_action :load_blog_post, only: [:show, :edit, :destroy, :update]
+  before_action :load_blog_post, only: [:show, :edit, :destroy, :update, :preview]
   before_action :require_admin_login, only: [:new, :create, :edit, :destroy]
   
   def index
@@ -48,7 +48,7 @@ class BlogPostsController < ApplicationController
   private
     
     def blog_post_params
-      params.require(:blog_post).permit(:title, :subtitle, :content)
+      params.require(:blog_post).permit(:title, :subtitle, :content, :title_image)
     end
     
     def load_blog_post
