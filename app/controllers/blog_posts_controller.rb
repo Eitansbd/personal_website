@@ -33,7 +33,7 @@ class BlogPostsController < ApplicationController
       @blog_post.save_content_to_aws
       flash[:success] = "Post updated successfully"
       
-      redirect_to blog_posts_url
+      redirect_to @blog_post.published? ? blog_posts_url : blog_posts_unpublished_url
     else
       flash[:error] = @blog_post.errors.full_messages.first
       render 'edit'
@@ -55,7 +55,7 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.find(params[:blog_post_id])
     @blog_post.toggle!(:published)
     
-    redirect_to blog_posts_url
+    redirect_to @blog_post.published? ? blog_posts_url : blog_posts_unpublished_url
   end
   
   private
