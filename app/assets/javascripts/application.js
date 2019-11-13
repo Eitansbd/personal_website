@@ -16,3 +16,8 @@
 //= require_tree .
 //= require jquery3
 //= require bootstrap-sprockets
+
+$('.modal').on('hidden.bs.modal', function (e) {
+    $iframe = $(this).find("iframe");
+    $iframe.attr("src", $iframe.attr("src"));
+});
