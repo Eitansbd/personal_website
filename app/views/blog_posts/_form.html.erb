@@ -1,19 +1,29 @@
-<div class="container">
-    <%= form_for @blog_post do |f| %>
-        <div class="row">
-            <%= f.label :title  %>
-            <%= f.text_field :title %>
-    
-            <%= f.label :subtitle %>
-            <%= f.text_field :subtitle %>
-      
+<%= form_for @blog_post do |f| %>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-3">
+            <div class="form-group">        
+                        <%= f.label :title  %>
+                        <%= f.text_field :title, class: "form-control" %>
+            </div> 
         </div>
-        <div class="row">
-            <%= f.text_area :content, class: "blog-content-input" %>
-      
+        
+        <div class="col-md-3">
+            <div class="form-group">
+                        <%= f.label :subtitle %>
+                        <%= f.text_field :subtitle, class: "form-control" %>
+            </div>
         </div>
-        <div class="row">
-          <%= f.submit "Upload Post", class: "btn btn-primary"%>
-          <% end %>
-        </div>  
-</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+            <%= f.text_area :content, class: "blog-content-input", placeholder: "Put blog markdown content here" %>
+        </div>
+    </div>
+        
+    </div class="row">
+        <div class="col-md-9">
+            <%= f.submit button_text, class: "btn btn-primary pull-right" %>    
+        </div>
+    </div>
+<% end %>
