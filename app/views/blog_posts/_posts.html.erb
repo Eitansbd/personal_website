@@ -1,11 +1,14 @@
 <div class="container">
   <% if admin_logged_in? %>
     <div class="row">
-      <div class="col-md-12 pull-right">
+      <div class="col-md-4 pull-left">
          <div class="btn-group">
            <%= link_to "#{other_post_type} Posts", other_post_type_path, class: "btn btn-primary" %>
            <%= link_to "New Post", new_blog_post_path, class: "btn btn-primary" %>
-         </div>     
+         </div>  
+      </div>
+      <div class="col-md-4">
+        <p class="admin-message-text"><%= admin_message %></p> 
       </div>
     </div>
    
