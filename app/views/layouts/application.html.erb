@@ -27,6 +27,11 @@
   
   	  </div>
   	</nav>
+  	
+  	<% flash.each do |msg_type, msg| %>
+        <div class="alert alert-<%= msg_type %>", role: "alert"><%= msg %></div>
+    <% end %>
+  	
   	<%= yield %>
   	
   	<div class="navbar navbar-default navbar-bottom">
