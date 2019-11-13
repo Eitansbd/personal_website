@@ -1,5 +1,5 @@
 class BlogPostsController < ApplicationController
-  before_action :load_blog_post, only: [:show, :edit, :destroy]
+  before_action :load_blog_post, only: [:show, :edit, :destroy, :update]
   before_action :require_admin_login, only: [:new, :create, :edit, :destroy]
   
   def index
@@ -25,6 +25,18 @@ class BlogPostsController < ApplicationController
   
   def edit
     @blog_post.fetch_content_from_aws
+  end
+  
+  def update
+    if @blog_post.update_attributes(blog_post_params)
+      @blog_post.save_content_to_aws
+      flash[:success] = "Post updated successfully"
+      
+      redirect_to blog_posts_url
+    else
+      flash[:error] = @blog_post.errors.full_messages.first
+      render 'edit'
+    end
   end
   
   def destroy
