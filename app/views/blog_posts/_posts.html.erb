@@ -1,0 +1,36 @@
+<div class="container">
+  <% if admin_logged_in? %>
+    <div class="row top-buffer">
+      
+      
+      <div class="col-md-12 pull-right">
+         <div class="btn-group">
+           <%= link_to "#{other_post_type} Posts", other_post_type_path, class: "btn btn-primary" %>
+           <%= link_to "New Post", new_blog_post_path, class: "btn btn-primary" %>
+         </div>     
+      </div>
+    </div>
+   
+  <% end %>
+  
+  <% @blog_posts.each_slice(3) do |set_of_posts| %>
+    <div class="row top-buffer">
+      <% set_of_posts.each do |blog_post| %>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-img-container">
+              <%= image_tag blog_post.title_image.url(:medium), class: "title-image" %>
+            </div>
+            
+            <div class="card-body">
+              <h5 class="card-title"><%= blog_post.title %></h5>
+              <p class="card-text"><%= blog_post.subtitle %></p>
+              <p class="card-text">Posted on: <%= post_date_format(blog_post.created_at) %></p>
+              <%= link_to "Read More", blog_post_path(blog_post), class: "btn btn-lg btn-primary" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
