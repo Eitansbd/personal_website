@@ -21,6 +21,10 @@ module BlogPostsHelper
     session[:admin] == 1
   end
   
+  def post_date_format(date)
+    date.strftime("%b %-d, %Y")
+  end
+  
   private
     class CustomRender < Redcarpet::Render::HTML
       include Rouge::Plugins::Redcarpet
