@@ -1,7 +1,7 @@
 class BlogPostsController < ApplicationController
   before_action :load_blog_post, only: [:show, :edit, :destroy, 
                                         :update]
-  before_action :require_admin_login, only: [:new, :create, :edit, :destroy, :all_blog_posts, :toggle]
+  before_action :require_admin_login, only: [:new, :create, :edit, :destroy, :unpublished, :toggle]
   
   def index
     @blog_posts = BlogPost.where(published: true)
@@ -46,10 +46,9 @@ class BlogPostsController < ApplicationController
     redirect_to blog_posts_url
   end
   
-  def all_blog_posts
-    @blog_posts = BlogPost.all
+  def unpublished
+    @blog_posts = BlogPost.where(published: false)
     
-    render 'index'
   end
   
   def toggle
