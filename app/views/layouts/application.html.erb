@@ -29,23 +29,31 @@
   	</nav>
   	
   	<% flash.each do |msg_type, msg| %>
-        <div class="alert alert-<%= msg_type %>", role: "alert"><%= msg %></div>
+  	<div class="container">
+  	  <div class="row">
+  	     <div class="col-md-12">
+  	       <div class="alert alert-<%= msg_type %>", role: "alert"><%= msg %></div>
+  	     </div>
+  	   </div>
+  	</div>
+  	   
+        
     <% end %>
   	
   	<%= yield %>
   	
-  	<div class="navbar navbar-default navbar-bottom">
-  	  <div class="container">
-  	  	 <div class="container-fluid text-md-left">
+  	<div class="footer">
+    	<div class="container">
+  	  	 <div class="container-fluid text-center">
   			    <div class="row bottom-nav-buffer">
-  		        <div class="col-sm-1 col-md-offset-4 vcenter">
-  		            <a href="https://github.com/eitansbd" target="_blank"><%= image_tag 'GitHub-Mark-64px.png', alt: "github" %></a>
+  		        <div class="col-md-1 vcenter">
+  		            <a href="https://github.com/eitansbd" target="_blank"><%= image_tag 'GitHub-Mark-64px.png', alt: "github", class: "footer-image" %></a>
   		        </div>
-  		        <div class="col-sm-1 col-md-offset-1 vcenter">
-  		            <a href="https://linkedin.com/in/eitanbardavid" target="_blank"><%= image_tag 'LI-In-Bug.png', id: "linkedin-logo", alt: "linkedin" %></a>
+  		        <div class="col-md-1 vcenter">
+  		            <a href="https://linkedin.com/in/eitanbardavid" target="_blank"><%= image_tag 'LI-In-Bug.png', class: "footer-image", alt: "linkedin" %></a>
   		        </div>
   		    	</div>
-  			  </div>
+  			</div>
   	  </div>
   	</div>
   </body>
