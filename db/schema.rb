@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_190501) do
+ActiveRecord::Schema.define(version: 2019_11_13_030736) do
 
   create_table "blog_posts", force: :cascade do |t|
     t.text "title"
@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(version: 2019_11_11_190501) do
     t.text "aws_obj_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title_image_file_name"
+    t.string "title_image_content_type"
+    t.bigint "title_image_file_size"
+    t.datetime "title_image_updated_at"
   end
 
 end
