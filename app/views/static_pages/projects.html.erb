@@ -1,39 +1,4 @@
 <div class="container">
-    
-    
-    <div class="row">
-        <div class="jumbotron">
-            <h2>Camp Schedule Management System
-                <div class="btn-group pull-right">
-                    <%= link_to "Source Code", "https://github.com/Eitansbd/camp_scheduling_app", target: "_blank", class: "btn btn-primary" %>
-                    <%= render 'video_modal', modal_name: "Schedular", video_link: "scheduler-demo-2.mp4" %>
-                    <%= link_to "Project Website", "https://camp-schedule-management.herokuapp.com/", target: "_blank", class: "btn btn-primary" %>
-                </div>
-            </h2>
-            <div class="row top-buffer-sm">
-                <div class="col-md-4">
-                    <h4>Background</h4>
-                    <p class="project-description">The worst job at any summer camp is the scheduler. The app is designed to generate a daily schedule for each bunk in the camp making sure that bunks don't have an activity twice, activities aren't overbooked, double periods are scheduled properly, and a bunch of other requirments. The app is designed to work with the user to make the perfect schedule for each day by allowing for user input at each step in the proccess.</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Best Feature</h4>
-                    <p>When the user enters a new activity into the system they indicate if the activity should by default be scheduled by the application (for example special activites and trips shouldn't be scheduled by default). Then on the scheduling page they are given a list of all the activities with checkboxes indicating if they are scheduled by default. But the user can uncheck or check any activity and override the default behavior.</p>
-                    <p></p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Technical Details</h4>
-                    <dl class="row">
-                        <dt class="col-md-4">Backend</dt>
-                        <dd class="col-md-8">Ruby, Sinatra, PostgreSQL with custom queries</dd>
-                        <dt class="col-md-4 text-truncate">Front End</dt>
-                        <dd class="col-md-8">ERB templating and HTML/CSS</dd>
-                        <dt class="col-md-4">Challenges</dt>
-                        <dd class="col-md-8">I used a custom DAO to interact with the database and had to write a bunch of complicated SQL queries to get the right data while avoiding n+1's</dd>
-                    </dl>
-                </div>
-            </div>
-        </div> 
-    </div>
     <div class="row">
         <div class="jumbotron">
             <h2>Personal Website
@@ -83,6 +48,41 @@
             </div>
         </div> 
     </div>
+    
+    <div class="row">
+        <div class="jumbotron">
+            <h2>Camp Schedule Management System
+                <div class="btn-group pull-right">
+                    <%= link_to "Source Code", "https://github.com/Eitansbd/camp_scheduling_app", target: "_blank", class: "btn btn-primary" %>
+                    <%= render 'video_modal', modal_name: "Schedular", video_link: "scheduler-demo-2.mp4" %>
+                    <%= link_to "Project Website", "https://camp-schedule-management.herokuapp.com/", target: "_blank", class: "btn btn-primary" %>
+                </div>
+            </h2>
+            <div class="row top-buffer-sm">
+                <div class="col-md-4">
+                    <h4>Background</h4>
+                    <p class="project-description">The worst job at any summer camp is the scheduler. The app is designed to generate a daily schedule for each bunk in the camp making sure that bunks don't have an activity twice, activities aren't overbooked, double periods are scheduled properly, and a bunch of other requirments. The app is designed to work with the user to make the perfect schedule for each day by allowing for user input at each step in the proccess.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Best Feature</h4>
+                    <p>When the user enters a new activity into the system they indicate if the activity should by default be scheduled by the application (for example special activites and trips shouldn't be scheduled by default). Then on the scheduling page they are given a list of all the activities with checkboxes indicating if they are scheduled by default. But the user can uncheck or check any activity and override the default behavior.</p>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Technical Details</h4>
+                    <dl class="row">
+                        <dt class="col-md-4">Backend</dt>
+                        <dd class="col-md-8">Ruby, Sinatra, PostgreSQL with custom queries</dd>
+                        <dt class="col-md-4 text-truncate">Front End</dt>
+                        <dd class="col-md-8">ERB templating and HTML/CSS</dd>
+                        <dt class="col-md-4">Challenges</dt>
+                        <dd class="col-md-8">I used a custom DAO to interact with the database and had to write a bunch of complicated SQL queries to get the right data while avoiding n+1's</dd>
+                    </dl>
+                </div>
+            </div>
+        </div> 
+    </div>
+    
     <div class="row">
         <div class="jumbotron">
             <h2>Todo App

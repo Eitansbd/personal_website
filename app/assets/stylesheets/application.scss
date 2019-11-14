@@ -112,8 +112,9 @@
 /* Projects */
 
 .modal-dialog {
-  width: 70%;
-  height: 70%;
+  margin-top: 0px;
+  width: 80%;
+  height: 80%;
   padding: 0;
 }
 
@@ -121,6 +122,10 @@
   height: auto;
   min-height: 100%;
   border-radius: 0;
+}
+
+.modal-header {
+ padding: 5px;
 }
 
 .jumbotron p {
