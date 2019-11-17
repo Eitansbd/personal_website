@@ -1,8 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.navbar-default {
-  background-color: white;
+
+
+
+
+
+
+/* General */
+.container-fluid {
+  max-width: 1200px;
 }
 
 .vcenter {
@@ -11,28 +18,21 @@
    float: none;
 }
 
-.top-buffer-sm {
-  margin-top: 20px;
-}
-
-#profile-pic {
-   margin: auto;    
-   display: block;
-   width: 300px;
-   height: 300px;
-   border: #f1f1f1 8px solid;
-}
-
 .top-buffer {
   margin-top: 45px;
 }
 
-.container-fluid {
-  max-width: 1200px;
+.top-buffer-sm {
+  margin-top: 20px;
 }
 
-.personal-description {
-  font-size: 16px;
+.alert {
+    font-size: 16px;
+}
+
+/* Layout */
+.navbar-default {
+  background-color: white;
 }
 
 .footer-image {
@@ -52,6 +52,48 @@
   background-color: #f1f1f1
 }
 
+.btn-block {
+    font-size: 24px;
+}
+
+.navbar-bottom {
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+
+/* Sticky footer styles */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 140px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0px;
+  height: 80px;
+  background-color: #f5f5f5;
+}
+
+
+/* Home Page */
+
+#profile-pic {
+   margin: auto;    
+   display: block;
+   width: 300px;
+   height: 300px;
+   border: #f1f1f1 8px solid;
+}
+
+.personal-description {
+  font-size: 16px;
+}
+
 .about-me {
     background-color: #2f4e6f;
     border-radius: 10px;
@@ -62,12 +104,18 @@
     color: white;
 }
 
+.personal_description a:hover {
+    color: white;
+}
+
 .contact-pitch {
     font-size: 20px;
 }
 
-.btn-block {
-    font-size: 24px;
+/* Blog Posts Index */
+.blog-background {
+  margin-top: 0px;
+  background-color: white;
 }
 
 .card {
@@ -99,17 +147,36 @@
     height: 44px;
 }
 
-.navbar-bottom {
-    margin-top: 60px;
-    margin-bottom: 0px;
+.blog-img-title {
+  margin-right: 20px;
+  height: 80px;
+  margin-bottom: 5px;
 }
 
-.blog-background {
-  margin-top: 0px;
-  background-color: white;
+.admin-message-text {
+    font-size: 24px;
 }
+
+.blog-post-content p{
+  font-size: 16px;
+}
+
+/* Blog Post Form */
+
+.blog-content-input {
+  height: 500px;
+  width: 100%;
+}
+
 
 /* Projects */
+.jumbotron p {
+  font-size: 15px;
+}
+
+.jumbotron h4 {
+  text-decoration: underline;
+}
 
 .modal-dialog {
   margin-top: 0px;
@@ -126,52 +193,5 @@
 
 .modal-header {
  padding: 5px;
-}
-
-.jumbotron p {
-  font-size: 15px;
-}
-
-.jumbotron h4 {
-  text-decoration: underline;
-}
-
-/* Blog Posts */
-.blog-content-input {
-  height: 500px;
-  width: 100%;
-}
-
-.blog-img-title {
-  margin-right: 20px;
-  height: 80px;
-  margin-bottom: 5px;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 140px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-bottom: 0px;
-  height: 80px;
-  background-color: #f5f5f5;
-}
-
-.admin-message-text {
-    font-size: 24px;
-}
-
-.alert {
-    font-size: 16px;
 }
 
