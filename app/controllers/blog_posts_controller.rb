@@ -11,6 +11,12 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.new
   end
   
+  def preview
+    @blog_post = BlogPost.new(blog_post_params)
+    
+    render 'show'
+  end
+  
   def create
     @blog_post = BlogPost.new(blog_post_params)
     @blog_post.save_content_to_aws
@@ -18,7 +24,7 @@ class BlogPostsController < ApplicationController
     
     @blog_post.save
     
-    redirect_to blog_posts_url_where_visible
+    redirect_to blog_post_url @blog_post
   end
   
   def show
@@ -34,7 +40,7 @@ class BlogPostsController < ApplicationController
       @blog_post.save_content_to_aws
       flash[:success] = "Post updated successfully"
       
-      redirect_to blog_posts_url_where_visible
+      redirect_to blog_post_url @blog_post
     else
       flash[:error] = @blog_post.errors.full_messages.first
       render 'edit'
