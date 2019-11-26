@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   get '/projects', to: 'static_pages#projects'
   get 'blog_posts/unpublished', to: 'blog_posts#unpublished'
+  get 'blog_posts/preview', to: 'blog_posts#preview'
   
   resources :blog_posts do
     patch :toggle_published, to: 'blog_posts#toggle', as: 'toggle_published'
