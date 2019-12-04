@@ -16,26 +16,26 @@
 //= require_tree .
 //= require jquery3
 //= require bootstrap-sprockets
-
-$(document).ready(function(){
-    $('.modal').on('hidden.bs.modal', function (e) {
-        $iframe = $(this).find("iframe");
-        $iframe.attr("src", $iframe.attr("src"));
-    });
-    
-    $('.card-col').hover(
-        function() {
-            $(this).animate({
-                marginTop: "-=1%"
-            }, 200)
-        },
+document.addEventListener("turbolinks:load", function() {
+    $(document).ready(function(){
+        $('.modal').on('hidden.bs.modal', function (e) {
+            $iframe = $(this).find("iframe");
+            $iframe.attr("src", $iframe.attr("src"));
+        });
         
-        function(){
-            $(this).animate({
-                marginTop: "0%"
-            }, 200)
-        }
-    );
+        $('.card-col').hover(
+            function() {
+                $(this).animate({
+                    marginTop: "-=1%"
+                }, 200);
+            },
+            
+            function(){
+                $(this).animate({
+                    marginTop: "0%"
+                }, 200);
+            }
+        );
+    });
 });
-
 
