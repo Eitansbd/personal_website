@@ -1,23 +1,23 @@
 <div class="container">
-    <% if admin_logged_in? %>
-        <div class="row">
-            <div class="col-md-3 col-md-offset-1">
-                <div class='btn-group'>
-                            <%= link_to "Edit", edit_blog_post_url(@blog_post.path), class: "btn btn-primary" %>
-                            <%= link_to "Delete", blog_post_url(@blog_post.path), method: :delete, class: "btn btn-primary", data: { confirm: "Delete Cannot Be Undone. Are you sure?" } %>
-                            <%= link_to opposite_of_published(@blog_post), blog_post_toggle_published_path(@blog_post.path), method: :patch, class: "btn btn-primary" %>
-                </div>
-            </div>
-        </div>    
-                    
-    <% end %>
-    <div class="row top-buffer blog-background">
+    <div class="row blog-background">
         <div class="col-md-10 col-md-offset-1">
+            <%= link_to blog_posts_path, class: "btn btn-default pull-left" do %>
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> All Posts
+            <% end %>
+            <% if admin_logged_in? %>
+                <div class='btn-group pull-right'>
+                    <%= link_to "Edit", edit_blog_post_url(@blog_post.path), class: "btn btn-primary" %>
+                    <%= link_to "Delete", blog_post_url(@blog_post.path), method: :delete, class: "btn btn-primary", data: { confirm: "Delete Cannot Be Undone. Are you sure?" } %>
+                    <%= link_to opposite_of_published(@blog_post), blog_post_toggle_published_path(@blog_post.path), method: :patch, class: "btn btn-primary" %>
+                </div>
+            <% end %>
             <div class="page-header">
                 <%= image_tag @blog_post.title_image.url(:medium), class: "thumbnail pull-left blog-img-title" %>
                 <h1><%= @blog_post.title%></h1>
                 <p><%= @blog_post.subtitle %></p>
             </div>
+            
+            
         </div>
     </div>  
     <div class="row">
