@@ -29,7 +29,7 @@
               <h5 class="card-title"><%= blog_post.title %></h5>
               <p class="card-text"><%= blog_post.subtitle %></p>
               <p class="card-text">Posted on: <%= post_date_format(blog_post.created_at) %></p>
-              <%= link_to "Read More", blog_post_path(blog_post), class: "btn btn-lg btn-primary" %>
+              <%= link_to "Read More", blog_post_path(blog_post), class: "btn btn-lg btn-primary read-more-btn" %>
             </div>
           </div>
         </div>
