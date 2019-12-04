@@ -1,12 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-
-
-
-
-
 /* General */
 .container-fluid {
   max-width: 1200px;
@@ -128,6 +122,11 @@ body {
     border: black 1px solid;
 }
 
+.card:hover {
+  -webkit-box-shadow: -1px 9px 40px -12px gray;
+  moz-box-shadow: -1px 9px 40px -12px gray;
+  box-shadow: -1px 9px 40px -12px gray;
+}
 .card-img-container {
   margin-top: 25px;
   margin-bottom: 50px;

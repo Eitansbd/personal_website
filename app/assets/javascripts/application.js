@@ -17,7 +17,25 @@
 //= require jquery3
 //= require bootstrap-sprockets
 
-$('.modal').on('hidden.bs.modal', function (e) {
-    $iframe = $(this).find("iframe");
-    $iframe.attr("src", $iframe.attr("src"));
+$(document).ready(function(){
+    $('.modal').on('hidden.bs.modal', function (e) {
+        $iframe = $(this).find("iframe");
+        $iframe.attr("src", $iframe.attr("src"));
+    });
+    
+    $('.card').hover(
+        function() {
+            $(this).animate({
+                marginTop: "-=2%"
+            }, 200)
+        },
+        
+        function(){
+            $(this).animate({
+                marginTop: "0%"
+            }, 200)
+        }
+        );
 });
+
+
