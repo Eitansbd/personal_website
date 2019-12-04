@@ -17,7 +17,7 @@
   <% @blog_posts.each_slice(3) do |set_of_posts| %>
     <div class="row">
       <% set_of_posts.each do |blog_post| %>
-        <div class="col-md-4">
+        <div class="col-md-4 card-col">
           <div class="card text-center">
             <div class="card-img-container">
               <%= image_tag blog_post.title_image.url(:medium), class: "title-image" %>

@@ -23,10 +23,10 @@ $(document).ready(function(){
         $iframe.attr("src", $iframe.attr("src"));
     });
     
-    $('.card').hover(
+    $('.card-col').hover(
         function() {
             $(this).animate({
-                marginTop: "-=2%"
+                marginTop: "-=1%"
             }, 200)
         },
         
