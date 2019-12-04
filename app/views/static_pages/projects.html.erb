@@ -1,6 +1,40 @@
 <div class="container">
     <div class="row">
         <div class="jumbotron">
+            <h2>Keeper
+                <div class="btn-group pull-right">
+                    <%= link_to "Source Code", "https://github.com/Eitansbd/keeper", target: "_blank", class: "btn btn-primary" %>
+                    <button type="button" class="btn btn-primary">Demo Coming Soon!</button>
+                    <%= link_to "Project Website", "https://keeperfish.herokuapp.com/", target: "_blank", class: "btn btn-primary" %>
+                </div>
+            </h2>
+            <div class="row top-buffer-sm">
+                <div class="col-md-4">
+                    <h4>Background</h4>
+                    <p>I went on my first fishing trip when I was three and have been hooked ever since. This website combines my passion for fishing and software by providing a platform for anglers to share their fishing experiences and the fish that they've caught. After signing up, users can post reports of the fishing trips they've been on and add the weight, length, and an image of fish they caught to show off their catches and see how they stack up against other anglers. </p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Best Feature</h4>
+                    <p>The homepage contains a table with the top fish that have been uploaded to the site. Users are able to sort the top fish by weight/length and species by selecting the desired value from a dropdown menu. Selecting a different option sends a jQuery AJAX request to the backend server API that returns the requested fish catch data in JSON using JBuilder. jQuery then removes the old data and populates the table with the data returned by the API. </p>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Technical Details</h4>
+                    <dl class="row">
+                        <dt class="col-md-4">Backend</dt>
+                        <dd class="col-md-8">Ruby, Rails, ActiveRecord, AWS S3, Jbuilder </dd>
+                        <dt class="col-md-4 text-truncate">Front End</dt>
+                        <dd class="col-md-8">JavaScript (jQuery), Bootstrap</dd>
+                        <dt class="col-md-4">I Learned</dt>
+                        <dd class="col-md-8">This project was an awesome experience using jQuery and Rails. Where appropriate, form data and other requests are sent with AJAX and content is updated without page reloads. </dd>
+                    </dl>
+                </div>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="row">
+        <div class="jumbotron">
             <h2>Personal Website
                 <div class="btn-group pull-right">
                     <%= link_to "Source Code", "https://github.com/Eitansbd/personal_website", target: "_blank", class: "btn btn-primary" %>
@@ -27,7 +61,7 @@
             <div class="row top-buffer-sm">
                 <div class="col-md-4">
                     <h4>Background</h4>
-                    <p>Looking for a job as a Software Engineer? It's probably a good idea to have a personal website because many jobs will ask for one. But don't use a template or wordpress - build one yourself!</p>
+                    <p>Looking for a job as a Software Engineer? It's probably a good idea to have a personal website because many jobs will ask for one. Because this project doesn't involve as much backend work, I used it as an oppertunity to learn more about Bootstrap and working with AWS S3 storage as a work around to Heroku's ephemeral filesystem.</p>
                 </div>
                 <div class="col-md-4">
                     <h4>Best Feature</h4>
@@ -40,7 +74,7 @@
                         <dt class="col-md-4">Backend</dt>
                         <dd class="col-md-8">Ruby, Rails, ActiveRecord, AWS S3 </dd>
                         <dt class="col-md-4 text-truncate">Front End</dt>
-                        <dd class="col-md-8">ERB, Bootstrap, JS</dd>
+                        <dd class="col-md-8">HTML/CSS, Bootstrap</dd>
                         <dt class="col-md-4">Challenges</dt>
                         <dd class="col-md-8">Sometimes configuration is the hardest part about a project. Adding the features was easy, figuring out why I couldn't access my S3 buckets was hard.</dd>
                     </dl>
@@ -61,11 +95,11 @@
             <div class="row top-buffer-sm">
                 <div class="col-md-4">
                     <h4>Background</h4>
-                    <p class="project-description">The worst job at any summer camp is the scheduler. The app is designed to generate a daily schedule for each bunk in the camp making sure that bunks don't have an activity twice, activities aren't overbooked, double periods are scheduled properly, and a bunch of other requirments. The app is designed to work with the user to make the perfect schedule for each day by allowing for user input at each step in the proccess.</p>
+                    <p class="project-description">The worst job at any summer camp is the scheduler. The app is designed to generate a daily schedule for each bunk in the camp making sure that bunks don't have an activity twice, activities aren't overbooked, double periods are scheduled properly, and a bunch of other requirments. The app is designed to work with the user to make the perfect schedule for each day by allowing for user input at each step in the scheduling proccess.</p>
                 </div>
                 <div class="col-md-4">
                     <h4>Best Feature</h4>
-                    <p>When the user enters a new activity into the system they indicate if the activity should by default be scheduled by the application (for example special activites and trips shouldn't be scheduled by default). Then on the scheduling page they are given a list of all the activities with checkboxes indicating if they are scheduled by default. But the user can uncheck or check any activity and override the default behavior.</p>
+                    <p>When the user enters a new activity into the system they indicate if the activity should by default be scheduled by the application (for example special activites and trips shouldn't be scheduled by default). Then on the scheduling page they are given a list of all the activities with checkboxes indicating if they are scheduled by default. But the user can uncheck or check any activity and override the default behavior. Unchecking an activity will ensure that the activity isn't scheduled for that day only.</p>
                     <p></p>
                 </div>
                 <div class="col-md-4">
@@ -112,7 +146,7 @@
             <div class="row top-buffer-sm">
                 <div class="col-md-4">
                     <h4>Background</h4>
-                    <p>For a project at Launch School we had to build a Todo application with sinatra. I decided to convert the app to rails - see the steps I took in this set of <%= link_to "blog posts", "link"%>.</p>
+                    <p>For a project at Launch School we had to build a Todo application with sinatra. I decided to convert the app to rails - see the steps I took in this set of <%= link_to "blog posts", blog_post_path(6)%>.</p>
                 </div>
                 <div class="col-md-4">
                     <h4>Best Feature</h4>
@@ -125,7 +159,7 @@
                         <dt class="col-md-4">Backend</dt>
                         <dd class="col-md-8">Ruby, Rails, ActiveRecord</dd>
                         <dt class="col-md-4 text-truncate">Front End</dt>
-                        <dd class="col-md-8">ERB, Bootstrap, JS</dd>
+                        <dd class="col-md-8">ERB, Bootstrap</dd>
                     </dl>
                 </div>
             </div>
