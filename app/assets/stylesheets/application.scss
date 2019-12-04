@@ -13,7 +13,7 @@
 }
 
 .top-buffer {
-  margin-top: 45px;
+  margin-top: 45px !important;
 }
 
 .top-buffer-sm {
@@ -25,6 +25,9 @@
 }
 
 /* Layout */
+.navbar {
+  margin-bottom: 40px;
+}
 .navbar-default {
   background-color: white;
 }
@@ -84,23 +87,26 @@ body {
    border: #f1f1f1 8px solid;
 }
 
-.personal-description {
-  font-size: 16px;
-}
+
 
 .about-me {
-    background-color: #2f4e6f;
-    border-radius: 10px;
-    padding: 60px 0px;
+  background-color: #2f4e6f;
+  border-radius: 10px;
+  padding: 60px 0px;
+  .about-me-text {
+    color: white;
+    .personal-description {
+      font-size: 16px;
+      a {
+        color: #98B1C4;
+      }
+      a:hover {
+        color: #C8D7E3;
+      }
+    }
+  }
 }
 
-.about-me-text {
-    color: white;
-}
-
-.personal_description a:hover {
-    color: white;
-}
 
 .contact-pitch {
     font-size: 20px;
@@ -113,37 +119,35 @@ body {
 }
 
 .card {
-    display:inline-block;
-    width: 300px;
-    height: 420px;
-    background-color: #2f4e6f;
-    border-radius: 10px;
-    margin-right: 60px;
-    border: black 1px solid;
+  display:inline-block;
+  width: 300px;
+  height: 420px;
+  background-color: #2f4e6f;
+  border-radius: 20px;
+  margin-right: 60px;
+  margin-bottom: 60px;
+  border: black 1px solid;
+  .card-img-container {
+      margin-top: 25px;
+      margin-bottom: 50px;
+  }
+  .card-body {
+    color: white;
+    .card-title {
+      font-weight: bold;
+      font-size:  20px;
+    }
+    .card-text {
+      font-size: 16px;
+      height: 44px;
+    }
+  }
 }
 
 .card:hover {
   -webkit-box-shadow: -1px 9px 40px -12px gray;
   moz-box-shadow: -1px 9px 40px -12px gray;
   box-shadow: -1px 9px 40px -12px gray;
-}
-.card-img-container {
-  margin-top: 25px;
-  margin-bottom: 50px;
-}
-
-.card-title {
-    font-weight: bold;
-    font-size:  20px;
-}
-
-.card-body {
-    color: white;
-    margin: 5px;
-}
-.card-text {
-    font-size: 16px;
-    height: 44px;
 }
 
 .blog-img-title {
@@ -169,12 +173,14 @@ body {
 
 
 /* Projects */
-.jumbotron p {
+.jumbotron { 
+  p {
   font-size: 15px;
-}
-
-.jumbotron h4 {
+  }
+  
+  h4 {
   text-decoration: underline;
+  }
 }
 
 .modal-dialog {
