@@ -1,6 +1,5 @@
 class BlogPostsController < ApplicationController
-  before_action :load_blog_post, only: [:show, :edit, :destroy, 
-                                        :update]
+  before_action :load_blog_post, only: [:show, :edit, :destroy, :update]
   before_action :require_admin_login, only: [:new, :create, :edit, :destroy, :unpublished, :toggle]
   
   def index
@@ -26,7 +25,7 @@ class BlogPostsController < ApplicationController
     
     @blog_post.save
     
-    redirect_to blog_post_url @blog_post
+    redirect_to blog_post_url @blog_post.path
   end
   
   def show
@@ -42,7 +41,7 @@ class BlogPostsController < ApplicationController
       @blog_post.save_content_to_aws
       flash[:success] = "Post updated successfully"
       
-      redirect_to blog_post_url @blog_post
+      redirect_to blog_post_url @blog_post.path
     else
       flash[:error] = @blog_post.errors.full_messages.first
       render 'edit'
@@ -63,7 +62,7 @@ class BlogPostsController < ApplicationController
   end
   
   def toggle
-    @blog_post = BlogPost.find(params[:blog_post_id])
+    @blog_post = BlogPost.find_by(path: params[:blog_post_id])
     @blog_post.toggle!(:published)
     
     flash[:success] = "Post was #{@blog_post.published? ? nil : "un"}published"
@@ -77,7 +76,7 @@ class BlogPostsController < ApplicationController
     end
     
     def load_blog_post
-      @blog_post = BlogPost.find(params[:id])
+      @blog_post = BlogPost.find_by(path: params[:id]) or not_found
     end
     
     def require_admin_login

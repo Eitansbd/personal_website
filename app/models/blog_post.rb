@@ -11,7 +11,8 @@ class BlogPost < ApplicationRecord
   validates :aws_obj_key, presence: true
   validates_attachment_content_type :title_image, :content_type => /\Aimage\/.*\Z/
   
-  
+  before_save :set_path_name, if: -> {new_record? || title_changed?}
+
   before_destroy :remove_files_from_aws
   
   def save_content_to_aws
@@ -29,6 +30,10 @@ class BlogPost < ApplicationRecord
   end
   
   private
+    def set_path_name
+      self.path = title.downcase.gsub(" ", "-")
+    end
+    
     def remove_files_from_aws
       object = fetch_s3_object
       
