@@ -4,7 +4,9 @@ class BlogPostsController < ApplicationController
   before_action :require_admin_login, only: [:new, :create, :edit, :destroy, :unpublished, :toggle]
   
   def index
-    @blog_posts = BlogPost.where(published: true).order(created_at: :desc)
+    @blog_posts = BlogPost.where(published: true)
+                          .order(created_at: :desc)
+                          .paginate(page: params[:page], per_page: 6)
   end
   
   def new
@@ -54,7 +56,9 @@ class BlogPostsController < ApplicationController
   end
   
   def unpublished
-    @blog_posts = BlogPost.where(published: false).order(created_at: :desc)
+    @blog_posts = BlogPost.where(published: false)
+                  .order(created_at: :desc)
+                  .paginate(page: params[:page], per_page: 6)
     
   end
   
