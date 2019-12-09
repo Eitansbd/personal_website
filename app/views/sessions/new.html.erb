@@ -2,8 +2,8 @@
   <div class="col-md-6 col-md-offset-4">
     <%= form_tag("/admin_login", method: "POST") do %>
       <%= label_tag(:admin_passsword, "Enter Admin Password: ") %>
-      <%= password_field_tag(:admin_password) %>
-      <%= submit_tag("Login") %>
+      <%= password_field_tag(:admin_password), class: "form-control" %>
+      <%= submit_tag("Login"), class: "form-control" %>
     <% end %>
   </div>
 </div>
