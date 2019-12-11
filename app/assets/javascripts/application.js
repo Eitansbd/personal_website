@@ -18,9 +18,14 @@
 //= require bootstrap-sprockets
 document.addEventListener("turbolinks:load", function() {
     $(document).ready(function(){
+        $('.modal').on('show.bs.modal', function () { // on opening the modal
+            $iframe = $(this).find("iframe");
+            $iframe.attr("src", $iframe.attr("src") + "?autoplay=1");
+        });
         $('.modal').on('hidden.bs.modal', function (e) {
             $iframe = $(this).find("iframe");
-            $iframe.attr("src", $iframe.attr("src"));
+            $iframe.attr("src", $iframe.attr("src").split("?")[0]);
+            console.log($iframe.attr("src").split("?")[0])
         });
         
         $('.card-col').hover(
